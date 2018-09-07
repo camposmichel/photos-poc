@@ -11,6 +11,7 @@ import Photo from '../../models/photo';
 export class HomePage {
 
   public feedPhotos: Photo[] = []
+  private backupFeed: Photo[] = []
 
   constructor(
     public navCtrl: NavController, 
@@ -29,8 +30,21 @@ export class HomePage {
       console.log(JSON.stringify(feed))
       if (feed) {
         this.feedPhotos = feed
+        this.backupFeed = feed
       }
     })
+  }
+
+  searchPhotos(ev: any) {
+    this.feedPhotos = this.backupFeed
+
+    const val = ev.target.value;
+
+    if (val && val.trim() != '' && val.length > 2) {
+      this.feedPhotos = this.feedPhotos.filter((photo) => {
+        return (photo.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 
 }
