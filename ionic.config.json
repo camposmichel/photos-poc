@@ -1,5 +1,7 @@
 {
   "name": "Poc Photos",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
