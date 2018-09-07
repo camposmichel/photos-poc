@@ -17,10 +17,10 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    // this.pages = [
-    //   { title: 'Home', component: HomePage },
-    //   { title: 'List', component: ListPage }
-    // ];
+    this.pages = [
+      { title: 'Home', component: 'HomePage' },
+      { title: 'Sobre', component: 'AboutPage' }
+    ];
 
   }
 
@@ -28,7 +28,8 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
+      // this.statusBar.styleDefault();
+      this.statusBar.styleBlackOpaque();
       this.splashScreen.hide();
     });
   }

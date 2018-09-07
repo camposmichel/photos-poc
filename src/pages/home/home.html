@@ -7,7 +7,7 @@
   </ion-navbar>
 
   <ion-toolbar>
-    <ion-searchbar (ionInput)="searchPhotos($event)"></ion-searchbar>
+    <ion-searchbar (ionInput)="searchPhotos($event)" placeholder="Buscar no Feed"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -53,17 +53,17 @@
 
   </ion-card>
 
-  <ion-fab right bottom>
+  <ion-fab right bottom #fab>
     <button ion-fab color="light">
       <ion-icon name="add"></ion-icon>
     </button>
     <ion-fab-list side="top">
-      <button ion-fab color="primary">
+      <button ion-fab color="primary" (tap)="takePic('camera', fab)">
         <ion-icon name="camera"></ion-icon>
       </button>
     </ion-fab-list>
     <ion-fab-list side="left">
-      <button ion-fab color="primary">
+      <button ion-fab color="primary" (tap)="takePic('gallery', fab)">
         <ion-icon name="images"></ion-icon>
       </button>
     </ion-fab-list>

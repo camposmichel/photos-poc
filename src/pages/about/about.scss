@@ -1,0 +1,15 @@
+page-about {
+  .list-header {
+    border-top: 0;
+    margin-bottom: 0;
+    margin-top: 6px;
+    font-size: 2.4rem;
+    color: #0a97b9;
+  }
+
+  ion-item {
+    ion-label {
+      white-space: initial;
+    }
+  }
+}

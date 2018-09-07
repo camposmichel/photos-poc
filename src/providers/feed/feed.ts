@@ -7,11 +7,13 @@ import Photo from '../../models/photo';
 @Injectable()
 export class FeedProvider {
 
+  private readonly API_URL: string = 'http://jsonplaceholder.typicode.com/photos'
+
   constructor(public http: HttpClient) {
   }
 
   list(): Observable<Photo[]> {
-    return this.http.get<Photo[]>('http://jsonplaceholder.typicode.com/photos')
+    return this.http.get<Photo[]>(this.API_URL)
       .pipe(catchError(this.handleError<Photo[]>('list')))
   }
 
